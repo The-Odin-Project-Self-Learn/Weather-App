@@ -1,28 +1,49 @@
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #020917;
 }
   
 
 /* ID selectors */
 
 #navbar {
+  height: 15vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 30%;
+  align-items: center;
+  background-color: #0B0942;
+  padding-left: 90px;
+  padding-right: 90px;
 }
 
 #navbar-buttons-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
 #main-container {
   display: flex;
   flex-direction: column;
-  height: 70%;
+}
+
+
+/* Class selectors */
+
+.navbar-buttons {
+  background-color: #0241b6;   /* Cool blue tone */
+  color: #959ba9;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 15px;          /* Rounded corners */
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
 }
