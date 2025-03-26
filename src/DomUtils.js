@@ -14,10 +14,16 @@ function createSearchIcon() {
     return searchIcon;
 }
 
+function createInputAndIconContainer() {
+    const inputAndIconContainer = document.createElement('div');
+    inputAndIconContainer.classList.add("input-and-icon-container");
+    return inputAndIconContainer;
+}
+
 
 function clearMainContainer() {
     const mainContainer = document.getElementById('main-container');
     mainContainer.textContent = '';
 }
 
-export {createInput, createSearchIcon, clearMainContainer};
+export {createInput, createSearchIcon, createInputAndIconContainer, clearMainContainer};
