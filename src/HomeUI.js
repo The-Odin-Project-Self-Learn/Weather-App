@@ -1,4 +1,5 @@
 import { clearMainContainer, createInput, createSearchIcon, createInputAndIconContainer } from "./DomUtils";
+import { loadTodaysForecastPage } from "./TodaysForecastUI";
 
 const mainContainer = document.getElementById('main-container');
 
@@ -31,6 +32,7 @@ function placeInputField() {
     const input = createInput();
     input.id = 'homepage-input';
     const searchIcon = createSearchIcon();
+    searchIcon.addEventListener('click', loadTodaysForecastPage);
 
     //append everything in order
     inputAndIconContainer.appendChild(input);
@@ -54,6 +56,7 @@ function placeSearchField() {
         const inputAndIconContainer = createInputAndIconContainer();
         inputAndIconContainer.id = 'search-button-input-container';
         const searchIcon = createSearchIcon();
+        searchIcon.addEventListener('click', loadTodaysForecastPage);
         const input = createInput();
         input.id = 'search-button-input';
         inputAndIconContainer.appendChild(input);

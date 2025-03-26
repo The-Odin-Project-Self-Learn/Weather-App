@@ -58,7 +58,7 @@ body {
 }
 
 #search-button-input {
-  background-color: #1F6BF9;
+  background-color: #023ca8;
 }
 
 /* Class selectors */
@@ -84,5 +84,11 @@ body {
 .input-and-icon-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
+}
+
+.search-icon {
+  color: blue;
+  cursor: pointer;
 }
