@@ -7,6 +7,9 @@ function loadHomePage() {
     placeInputField();
 }
 
+/*
+Places the main input field in the center of the home page
+*/
 function placeInputField() {
     //create outermost container
     const outermostContainer = document.createElement('div');
@@ -38,4 +41,11 @@ function placeInputField() {
     mainContainer.appendChild(outermostContainer);
 }
 
-export {loadHomePage};
+/* 
+Places the search input-field underneath the "search" button
+*/
+function placeSearchField() {
+
+}
+
+export {loadHomePage, placeSearchField};

@@ -51,6 +51,7 @@ body {
 #input-and-icon-container {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 
 #homepage-text {
@@ -75,4 +76,5 @@ body {
   height: 30px;
   width: 400px;
   background-color: #0B0942;
+  border: none;
 }

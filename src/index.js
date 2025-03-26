@@ -1,6 +1,8 @@
-import "./styles.css";
 import { loadHomePage } from "./HomeUI";
+import { handleEvents } from "./EventHandler";
+import "./styles.css";
 
 loadHomePage();
+handleEvents();
 
-console.log("Webpack is running!");
+

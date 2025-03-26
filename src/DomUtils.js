@@ -1,3 +1,5 @@
+import searchIconPath from './assets/line-md_search.svg';
+
 function createInput() {
     const inputField = document.createElement('input');
     inputField.classList.add('inputField');
@@ -8,7 +10,7 @@ function createInput() {
 function createSearchIcon() {
     const searchIcon = document.createElement('img');
     searchIcon.classList.add('icon');
-    searchIcon.src = './assets/line-md_search.svg';
+    searchIcon.src = searchIconPath;
     return searchIcon;
 }
 
