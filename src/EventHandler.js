@@ -1,4 +1,3 @@
-//import { loadCurrentForecast } from "./CurrentForecastUI";
 import { loadCurrentForecast } from "./CurrentForecastUI";
 import { loadHomePage } from "./HomeUI";
 import { placeSearchField } from "./NavbarUI";
@@ -21,7 +20,6 @@ function handleEvents() {
         if (event.target.classList.contains('search-icon')) {
             processInput(event)
             .then(weatherData => {
-                if (!weatherData) {return;}
                 loadCurrentForecast(weatherData);
             })
             .catch((error) => {

@@ -11,6 +11,10 @@ function loadHomePage() {
 Places the main input field in the center of the home page
 */
 function placeInputField() {
+    //center items within main container
+    mainContainer.classList.remove('top-aligned');
+    mainContainer.classList.add('centered');
+
     //create outermost container
     const outermostContainer = document.createElement('div');
     outermostContainer.id = "outermost-input-container";

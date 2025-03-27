@@ -32,6 +32,7 @@ body {
 #main-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   flex-grow: 1;
 }
@@ -59,6 +60,22 @@ body {
 
 #search-button-input {
   background-color: #023ca8;
+}
+
+#location-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#location-name {
+  color: #1F6BF9;
+  font-size: 30px;
+}
+
+#datetime {
+  color: white;
 }
 
 /* Class selectors */
@@ -91,4 +108,14 @@ body {
 .search-icon {
   color: blue;
   cursor: pointer;
+}
+
+
+/* Class and ID selectors */
+#main-container.centered {
+  justify-content: center; /* overrides justify-content from ID selector alone */
+}
+
+#main-container.top-aligned {
+  justify-content: flex-start; 
 }
