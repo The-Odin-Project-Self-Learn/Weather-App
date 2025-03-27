@@ -4,8 +4,9 @@ async function queryAPI(inputText) {
         const jsonData = await response.json();
         console.log(jsonData);
         return jsonData;
-    } catch {
-        console.log("error caught");
+        
+    } catch (error) {
+        console.log(error);
     }
 }
 
