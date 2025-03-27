@@ -7,23 +7,23 @@ Takes info from input field, sends to API module, and retrieves fetched JSON dat
 */
 async function processInput(event) {
     let jsonData = '';
+    let inputField = '';
     const clickedSearchIcon = event.target;
 
-    try {
-        //collect data from the corresponding form
-        if (clickedSearchIcon.id == 'homepage-input-icon') {
-            const inputField = document.getElementById('homepage-input');
-            jsonData = await queryAPI(inputField.value);
+    //collect data from the corresponding form
+    if (clickedSearchIcon.id == 'homepage-input-icon') {
+        inputField = document.getElementById('homepage-input');
 
-        } else if (clickedSearchIcon.id == 'search-button-input-icon') {
-            const inputField = document.getElementById('search-button-input');
-            jsonData = await queryAPI(inputField.value);
-        }
-        extractData(jsonData);
-
-    } catch {
-        console.log('Error retrieving weather data for this location');
+    } else if (clickedSearchIcon.id == 'search-button-input-icon') {
+        inputField = document.getElementById('search-button-input');
     }
+
+    jsonData = await queryAPI(inputField.value);
+    extractData(jsonData);
+    return weatherData;
+
+    //if queryAPI() returns Promise.resolve(jsonData), jsonData variable takes on the value passed from resolve()
+    //if queryAPI() returns Promise.reject(error), processInput() will also return a rejected promise with the same error
 }
 
 /* 
@@ -41,4 +41,4 @@ function extractData(jsonData) {
     console.log('Necessary data: ', weatherData);
 }
 
-export {processInput, weatherData};
+export {processInput};

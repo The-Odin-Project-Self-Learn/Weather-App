@@ -1,7 +1,8 @@
+//import { loadCurrentForecast } from "./CurrentForecastUI";
 import { loadCurrentForecast } from "./CurrentForecastUI";
 import { loadHomePage } from "./HomeUI";
 import { placeSearchField } from "./NavbarUI";
-import { processInput, weatherData } from "./SearchController";
+import { processInput } from "./SearchController";
 
 function handleEvents() {
     const searchButton = document.getElementById('search-button');
@@ -18,8 +19,15 @@ function handleEvents() {
     //if a search icon is clicked, process the search and load the current forecast for that location
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('search-icon')) {
-            processInput(event);
-            loadCurrentForecast(weatherData);
+            processInput(event)
+            .then(weatherData => {
+                if (!weatherData) {return;}
+                loadCurrentForecast(weatherData);
+            })
+            .catch((error) => {
+                console.log(error);
+                alert('Invalid location!');
+            });
         }
     });
 }
