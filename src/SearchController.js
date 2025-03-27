@@ -3,7 +3,7 @@ import { queryAPI } from "./API";
 const weatherData = {};
 
 /*
-Takes info from input field, sends to API module, and gets back JSON data from API
+Takes info from input field, sends to API module, and retrieves fetched JSON data
 */
 async function processInput(event) {
     let jsonData = '';
@@ -38,7 +38,7 @@ function extractData(jsonData) {
     weatherData.snow = jsonData.currentConditions.snow;
     weatherData.temp = jsonData.currentConditions.temp;
     weatherData.windspeed = jsonData.currentConditions.windspeed;
-    console.log(weatherData);
+    console.log('Necessary data: ', weatherData);
 }
 
 export {processInput, weatherData};

@@ -1,5 +1,4 @@
 import { clearMainContainer, createInput, createSearchIcon, createInputAndIconContainer } from "./DomUtils";
-import { processInput } from "./SearchController";
 
 const mainContainer = document.getElementById('main-container');
 
@@ -33,9 +32,6 @@ function placeInputField() {
     input.id = 'homepage-input';
     const searchIcon = createSearchIcon();
     searchIcon.id = 'homepage-input-icon';
-    searchIcon.addEventListener('click', (event) => {
-        processInput(event);
-    });
 
     //append everything in order
     inputAndIconContainer.appendChild(input);
@@ -46,29 +42,4 @@ function placeInputField() {
     mainContainer.appendChild(outermostContainer);
 }
 
-/* 
-Places the search input-field underneath the "search" button
-*/
-function placeSearchField() {
-    const searchButton = document.getElementById('search-button');
-    const searchButtonInputContainer = document.getElementById('search-button-input-container');
-
-    if (searchButtonInputContainer) {
-        searchButtonInputContainer.remove();
-    } else {
-        const inputAndIconContainer = createInputAndIconContainer();
-        inputAndIconContainer.id = 'search-button-input-container';
-        const searchIcon = createSearchIcon();
-        searchIcon.id = 'search-button-input-icon';
-        searchIcon.addEventListener('click', (event) => {
-            processInput(event);
-        });
-        const input = createInput();
-        input.id = 'search-button-input';
-        inputAndIconContainer.appendChild(input);
-        inputAndIconContainer.appendChild(searchIcon);
-        searchButton.after(inputAndIconContainer);
-    }
-}
-
-export {loadHomePage, placeSearchField};
+export {loadHomePage};
