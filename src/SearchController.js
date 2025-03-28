@@ -1,4 +1,4 @@
-import { queryAPI } from "./API";
+import { queryAPI, queryGiphyAPI } from "./API";
 
 const weatherData = {};
 
@@ -26,11 +26,31 @@ async function processInput(event) {
     //if queryAPI() returns Promise.reject(error), processInput() will also return a rejected promise with the same error
 }
 
+/*
+Gets GIF data from API, then returns URL 
+*/
+
+async function getWeatherGIF(condition) {
+    let queryTerm  = '';
+    if (condition == 'rain') {
+        queryTerm = 'rainy';
+    } if (condition == 'Partially Cloudy') {
+        queryTerm = 'cloudy';
+    } if (condition == 'Overcast') {
+        queryTerm = 'overcast';
+    }
+    const jsonData = await queryGiphyAPI(queryTerm);
+    const url = jsonData.images.original.url;
+    return url;
+}
+
+
+
 /* 
 Extracts and adds necessary data to weatherData object once data comes in from API
 */
 function extractData(jsonData) {
-    weatherData.address = jsonData.address;
+    weatherData.address = jsonData.resolvedAddress;
     weatherData.conditions = jsonData.currentConditions.conditions;
     weatherData.datetime = jsonData.currentConditions.datetime;
     weatherData.icon = jsonData.currentConditions.icon;
@@ -41,4 +61,4 @@ function extractData(jsonData) {
     console.log('Necessary data: ', weatherData);
 }
 
-export {processInput};
+export {processInput, getWeatherGIF};
