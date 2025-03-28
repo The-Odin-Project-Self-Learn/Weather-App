@@ -32,11 +32,9 @@ Gets GIF data from API, then returns URL
 
 async function getWeatherGIF(condition) {
     let queryTerm  = '';
-    if (condition == 'rain') {
-        queryTerm = 'rainy';
-    } if (condition == "Partially cloudy") {
+    if (condition == "Partially cloudy") {
         queryTerm = 'cloudy';
-    } if (condition == 'Overcast') {
+    } else if (condition == 'Overcast') {
         queryTerm = 'overcast';
     }
     const jsonData = await queryGiphyAPI(queryTerm);

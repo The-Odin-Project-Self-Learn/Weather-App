@@ -25,6 +25,7 @@ function createInputAndIconContainer() {
 function clearMainContainer() {
     const mainContainer = document.getElementById('main-container');
     mainContainer.textContent = '';
+    mainContainer.style.backgroundImage = '';
 }
 
 export {createInput, createSearchIcon, createInputAndIconContainer, clearMainContainer};
