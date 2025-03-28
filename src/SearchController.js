@@ -34,13 +34,13 @@ async function getWeatherGIF(condition) {
     let queryTerm  = '';
     if (condition == 'rain') {
         queryTerm = 'rainy';
-    } if (condition == 'Partially Cloudy') {
+    } if (condition == "Partially cloudy") {
         queryTerm = 'cloudy';
     } if (condition == 'Overcast') {
         queryTerm = 'overcast';
     }
     const jsonData = await queryGiphyAPI(queryTerm);
-    const url = jsonData.images.original.url;
+    const url = jsonData.data.images.original.url;
     return url;
 }
 
